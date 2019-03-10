@@ -68,6 +68,7 @@ void setAlarm(){
       }
     }
   }
+  //print alarm set on serial monitor
   Serial.print("SetAlarm: ");
   Serial.print(hr);
   Serial.print(" hour, ");
@@ -79,13 +80,14 @@ void setAlarm(){
 }
 
 void loop(){
+  //turn on/off alarm
   if(digitalRead(8) == HIGH){
     set = true;
     }
   if(digitalRead(8) != HIGH){
     set = false;
     }  
-    //sound when system time >= alarm set
+    //sound when system time >= alarm set AND set = true
   if(millis() >= ((hr*60*60000) + (mint*60000)) && set){
     tone(buzzer,1000);
     delay(3000);//sound on for 3s
