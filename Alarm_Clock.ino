@@ -5,9 +5,6 @@
 //Alarm clock
 //Yifan Fang, ECE387, Spring 2019
 
-#include <Wire.h>
-#include <RTClib.h>
-
 int hr;
 int mint;
 int buzzer = 13;
